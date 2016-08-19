@@ -1,0 +1,21 @@
+#box {
+	background-color: #B3ECFF;
+	margin: 0 auto;
+	margin-top: 150px;
+	width: 300px;
+	height: auto;
+	padding: 20px;
+}
+
+body {
+	font-size: 20px;
+}
+
+ul li {
+	list-style: none;
+}
+
+.done {
+	text-decoration: line-through;
+	color: #7B9096;
+}
