@@ -1,21 +1,142 @@
-#box {
-	background-color: #B3ECFF;
-	margin: 0 auto;
-	margin-top: 150px;
-	width: 300px;
-	height: auto;
-	padding: 20px;
-}
-
 body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+	width: 100%;
+	height: 60px;
+	background-color: #0388a6;
+	clear: both;
+}
+
+.inner {
+	width: 700px;
+	height: 60px;
+    margin: 0 auto;	
+}
+
+.header .inner h1 {
 	font-size: 20px;
+	margin: 0;
+	display: inline-block;
+	float: left;
+	padding: 21px 0px 0px 0px;
+	color: #FFF;
 }
 
-ul li {
-	list-style: none;
+.header .inner ul {
+	display: inline-block;
+	float: right;
+	padding: 10px 0px;
 }
 
-.done {
-	text-decoration: line-through;
-	color: #7B9096;
+.header .inner ul li {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.header .inner ul li a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.wrapper {
+	width: 700px;
+    height: auto;
+    margin: 0 auto;	
+	padding: 20px 0px 60px 0px;
+}
+
+.search {
+	width: 680px;
+	height: 30px;
+	padding: 0px 10px;
+	border-radius: 5px;
+}
+
+.addtask input {
+	height: 30px;
+	padding: 0px 10px;
+	border-radius: 5px;	
+}
+
+table {
+	margin-top: 20px;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.th {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+td, th {
+	text-align: left;
+	width: 20%;
+	padding: 6px;
+	border-bottom: 1px solid #222;
+	font-weight: normal;
+}
+
+td:first-child, th:first-child {
+	width: 30%;
+}
+
+td:last-child, th:last-child {
+	width: 10%;
+	text-align: center;
+}
+
+td:last-child {
+	cursor: pointer;
+}
+
+td:nth-child(3) {
+	padding-left: 40px;
+}
+
+td:last-child div {
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+.addtask input {
+	height: 30px;
+	padding: 0px 10px;
+	border-radius: 5px;	
+}
+
+.addti {
+	width: 180px;
+}
+
+.addda {
+	width: 90px;
+	margin-left: 10px;
+}
+
+.adddu {
+	width: 100px;
+	margin-left: 10px;
+}
+
+.addle {
+	width: 100px;
+	margin-left: 10px;
+}
+
+.submit {
+	margin-left: 10px;
+	color: #FFF;
+	font-weight: bold;
+	border: none;
+	background-color: #0388a6;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background-color: #007997;
 }
