@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('myController', ['$scope', function($scope){
+myApp.controller('myController', ['$scope', '$http', function($scope, $http){
 	
 	$scope.removeTask = function(task){
 		var removedTask = $scope.tasks.indexOf(task);
@@ -23,48 +23,8 @@ myApp.controller('myController', ['$scope', function($scope){
         $scope.newtask.icon = "";		
 	}
 	
-    $scope.tasks = [
-	{
-	title: "marketing consultations",
-	rate: 1800,
-	duration: 3,
-	level: "medium",
-	icon: "img/marketing.png"
-	},
-	{
-	title: "collect a team",
-	rate: 3000,
-	duration: 7,
-	level: "hard",
-	icon: "img/growth.png" 
-	},
-	{
-	title: "brain storm",
-	rate: 600,
-	duration: 2,
-	level: "easy",
-	icon: "img/bulb.png"
-    },
-	{	
-	title: "coding",
-	rate: 2900,
-	duration: 5,
-	level: "medium",
-	icon: "img/code.png"
-    },
-	{		
-	title: "budget",
-	rate: 1300,
-	duration: 3,
-	level: "hard",
-	icon: "img/growth.png" 
-    },
-	{	
-	title: "testing",
-	rate: 1500,
-	duration: 2,
-	level: "hard",
-	icon: "img/code.png"
-    }	
-	];
+	$http.get('data.json').success(function(data){
+		$scope.tasks = data;
+	});
+
 }]);
