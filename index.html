@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html lang="pl" ng-app="myApp">
 
-<head>	
+<head>
     <meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="screen"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="js/app.js"></script>
-	<link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-  
+
 <body>
-  <div ng-include="'header.html'"></div>
-  <div class="wrapper" ng-controller="myController">
+<div ng-include="'header.html'"></div>
+<div class="wrapper" ng-controller="myController">
+    <form ng-submit="addTask()" class="addtask">
+        Add new task:
+        <input type="text" class="addti" placeholder="Title" ng-model="newtask.title">
+        <input type="text" class="addre" placeholder="Rate (&#36;)" ng-model="newtask.rate">
+        <input type="text" class="adddu" placeholder="Duration (h)" ng-model="newtask.duration">
+        <input type="text" class="addle" placeholder="Level" ng-model="newtask.level">
+        <select class="select" placeholder="Icon" ng-model="newtask.icon">
+            <option value="" selected disabled>Choose icon</option>
+            <option value="img/marketing.png">Marketing</option>
+            <option value="img/bulb.png">Concept</option>
+            <option value="img/code.png">Production</option>
+            <option value="img/growth.png">HR &amp; Finance</option>
+        </select>
+        <input type="submit" class="submit" value="Add New" ng-model="">
+    </form>
     <input type="text" ng-model="search" class="search" placeholder="Find Task">
-<!--<input type="button" value="Done" ng-click="ifdone = 'task.done'">-->
-
-	
-  <table>
-    <th></th>
-    <th ng-click="order = 'title'" class="th">Title</th>
-	<th ng-click="order = 'rate'" class="th">Rate</th>
-	<th ng-click="order = 'duration'" class="th">Duration</th>
-	<th ng-click="order = 'level'" class="th">Level</th>
-	<th>Remove</th>
-  <tr ng-repeat="task in tasks | orderBy: order | filter: search">
-    <td><img src="{{task.icon}}" class="icon"></td>
-    <td>{{task.title}}</td>
-    <td>{{task.rate | currency: '$'}}</td>
-	<td>{{task.duration}}</td>
-	<td>{{task.level}}</td>
-	<td ng-click="removeTask(task)"><div>x</div></td>
-  </tr>
-  </table>
-  
-  <p>Add new task:</p>
-  <form ng-submit="addTask()" class="addtask">
-    <div class="title_form">
-	   <select class="select" placeholder="Icon" ng-model="newtask.icon">
-	     <option value="" selected disabled>Choose icon</option>
-	     <option value="img/marketing.png">Marketing</option>
-	     <option value="img/bulb.png">Concept</option>
-	     <option value="img/code.png">Production</option>
-	     <option value="img/growth.png">HR &amp; Finance</option>
-       </select>
-       <input type="text" class="addti" placeholder="Title" ng-model="newtask.title">
-	</div>
-    <input type="text" class="addre" placeholder="Rate" ng-model="newtask.rate">
-    <input type="text" class="adddu" placeholder="Duration" ng-model="newtask.duration">
-    <input type="text" class="addle" placeholder="Level" ng-model="newtask.level">
-	<input type="submit" class="submit" value="Add New" ng-model="">
-  </form>
-
-
-
-  </div>
+    <table>
+        <th></th>
+        <th ng-click="order = 'title'" class="th">Title</th>
+        <th ng-click="order = 'rate'" class="th">Rate</th>
+        <th ng-click="order = 'duration'" class="th">Duration</th>
+        <th ng-click="order = 'level'" class="th">Level</th>
+        <th></th>
+        <tr ng-repeat="task in tasks | orderBy: order | filter: search">
+            <td><img src="{{task.icon}}" class="icon"></td>
+            <td>{{task.title}}</td>
+            <td>{{task.rate | currency: '$'}}</td>
+            <td>{{task.duration}}</td>
+            <td>{{task.level}}</td>
+            <td ng-click="removeTask(task)">
+                <div>Remove</div>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
 
