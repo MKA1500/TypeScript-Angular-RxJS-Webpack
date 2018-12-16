@@ -10,9 +10,24 @@ export class AppComponent {
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
   answer = '';
+  genders = ['male', 'female', 'other', 'prefer not to say'];
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: '',
+    //     gender: 'male'
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: 'Dora'
+    // });
+    this.signupForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
   // onSubmit(form: NgForm) {
@@ -25,6 +40,6 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.signupForm);
-    console.log(this.signupForm.value.email);
+    console.log(this.signupForm.value.userData.email);
   }
 }
