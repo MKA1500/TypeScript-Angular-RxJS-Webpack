@@ -8,3 +8,21 @@ select.ng-invalid.ng-touched {
 .help-block {
   color: red;
 }
+.your-data {
+  padding-top: 30px;
+}
+.suggest-btn-container {
+  padding-top: 25px;
+}
+.suggest-btn-container button {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .suggest-btn-container {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .suggest-btn-container button {
+    width: auto;
+  }
+}

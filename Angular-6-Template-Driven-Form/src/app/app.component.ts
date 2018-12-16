@@ -11,6 +11,14 @@ export class AppComponent {
   defaultQuestion = 'pet';
   answer = '';
   genders = ['male', 'female', 'other', 'prefer not to say'];
+  user = {
+    username: '',
+    email: '',
+    gender: '',
+    secretQuestion: '',
+    answer: ''
+  };
+  submitted = false;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -40,6 +48,15 @@ export class AppComponent {
 
   onSubmit() {
     console.log(this.signupForm);
-    console.log(this.signupForm.value.userData.email);
+
+    this.submitted = true;
+
+    this.user.username = this.signupForm.value.userData.username;
+    this.user.email = this.signupForm.value.userData.email;
+    this.user.gender = this.signupForm.value.userData.gender;
+    this.user.secretQuestion = this.signupForm.value.secret;
+    this.user.answer = this.signupForm.value.questionAnswer;
+
+    this.signupForm.reset();
   }
 }

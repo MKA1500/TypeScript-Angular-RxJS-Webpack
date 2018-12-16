@@ -7,20 +7,26 @@
           id="user-data"
           ngModelGroup="userData"
           #userData="ngModelGroup">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              class="form-control"
-              ngModel
-              name="username"
-              required>
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  class="form-control"
+                  ngModel
+                  name="username"
+                  required>
+              </div>
+            </div>
+            <div class="col-sm-4 suggest-btn-container">
+              <button
+                class="btn btn-default"
+                type="button"
+                (click)="suggestUserName()">Suggest an Username</button>
+            </div>
           </div>
-          <button
-            class="btn btn-default"
-            type="button"
-            (click)="suggestUserName()">Suggest an Username</button>
           <div class="form-group">
             <label for="email">E-Mail</label>
             <input
@@ -38,8 +44,8 @@
                 Please enter a valid E-Mail
               </span>
           </div>
-          <div class="form-group">
-            <div class="radio" *ngFor="let gender of genders">
+          <div class="form-group row">
+            <div class="radios col-sm-6" *ngFor="let gender of genders">
               <label>
                 <input
                   type="radio"
@@ -79,6 +85,14 @@
           type="submit"
           [disabled]="!f.valid">Submit</button>
       </form>
+      <div class="your-data" *ngIf="submitted">
+        <h4>Your data:</h4>
+        <p>Username: <strong>{{ user.username }}</strong></p>
+        <p>E-Mail: <strong>{{ user.email }}</strong></p>
+        <p>Gender: <strong>{{ user.gender }}</strong></p>
+        <p>Secret Question: <strong>{{ user.secretQuestion }}</strong></p>
+        <p>Answer: <strong>{{ user.answer }}</strong></p>
+      </div>
     </div>
   </div>
 </div>
