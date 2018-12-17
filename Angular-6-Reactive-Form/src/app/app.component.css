@@ -8,3 +8,6 @@ select.ng-invalid.ng-touched {
 .help-block {
   color: red;
 }
+.add-hobby {
+  margin-bottom: 15px;
+}
