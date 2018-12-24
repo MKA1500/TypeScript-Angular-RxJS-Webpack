@@ -6,7 +6,7 @@ select.ng-invalid.ng-touched {
   border-color: red;
 }
 .help-block {
-  color: red;
+  color: #b71616;
 }
 .add-hobby {
   margin-bottom: 15px;
