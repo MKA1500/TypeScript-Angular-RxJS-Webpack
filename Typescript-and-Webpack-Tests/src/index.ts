@@ -1,4 +1,4 @@
-function greeter(person) {
+function greeter(person: any) {
     return "Hello, " + person;
 }
 
